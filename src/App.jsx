@@ -6,7 +6,7 @@ const App = () => {
   const [note, setNote] = useState("");
   const [timeLeft, setTimeLeft] = useState("");
   const [isDark, setIsDark] = useState(false);
-  const [speed, setSpeed] = useState(1); // Growth speed state
+  const [speed, setSpeed] = useState(1);
   const mouseRef = useRef({ x: 0, y: 0 });
 
   const seededRandom = (s) => {
@@ -21,8 +21,8 @@ const App = () => {
     "Sending you all the pink vibes and all my love.",
     "You're the most beautiful flower in the whole world, Sara.",
     "Thinking of you always makes my heart bloom.",
-    "To the girl who deserves all the flowers in the world.",
-    "Stay sweet, stay girly, stay you. Love you, Sara."
+    "Stay sweet, stay girly, stay you. Love you, Sara.",
+    "To the girl who deserves all the flowers in the world."
   ];
 
   useEffect(() => {
@@ -93,7 +93,6 @@ const App = () => {
         const p = Math.max(0, Math.min((frame - f.delay) / 80, 1));
         if (p <= 0) return;
 
-        // Interaction: Calculate distance to mouse
         const dx = mouseRef.current.x - f.x;
         const dy = mouseRef.current.y - f.y;
         const dist = Math.sqrt(dx*dx + dy*dy);
@@ -145,7 +144,7 @@ const App = () => {
       ctx.ellipse(bx + 18, 400, 18, 12, 0.4, 0, Math.PI * 2);
       ctx.fill(); ctx.stroke();
 
-      frame += speed; // Use speed state
+      frame += speed;
       requestAnimationFrame(animate);
     };
     animate();
@@ -176,6 +175,7 @@ const App = () => {
     fCtx.font = "italic 24px 'Dancing Script', cursive"; 
     fCtx.fillText(`"${note}"`, 250, 700);
     fCtx.fillStyle = isDark ? "#ad1457" : "#d81b60"; 
+    fCtx.font = "italic 18px 'Dancing Script', cursive";
     fCtx.fillText("Made with love by Coco", 250, 805);
     const link = document.createElement('a'); 
     link.download = `sara-bouquet.png`; 
@@ -202,7 +202,6 @@ const App = () => {
 
         <p className="love-note pink">"{note}"</p>
 
-        {/* Growth Speed Slider */}
         <div className="slider-container">
           <label>Growth Speed</label>
           <input 
