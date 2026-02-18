@@ -1,0 +1,41 @@
+.slider-container {
+  margin: 10px 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.slider-container label {
+  font-family: 'Quicksand';
+  font-size: 0.8rem;
+  color: #f06292;
+  font-weight: 700;
+}
+
+.pink-slider {
+  -webkit-appearance: none;
+  width: 60%;
+  height: 6px;
+  background: #f8bbd0;
+  border-radius: 5px;
+  outline: none;
+}
+
+.pink-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #ad1457;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid white;
+}
+
+.dark-theme .pink-slider {
+  background: #4a143c;
+}
+
+.dark-theme .pink-slider::-webkit-slider-thumb {
+  background: #ff80ab;
+}
