@@ -224,9 +224,9 @@ const App = () => {
         </div>
 
         <div className="actions">
-          <button className="btn pink-btn" onClick={() => window.location.reload()}>Replay</button>
-          <button className="btn pink-btn pink-btn-main" onClick={downloadImage}>Save Card</button>
-        </div>
+  <button className="btn pink-btn" onClick={() => window.location.reload()}>Replay</button>
+  <button className="btn pink-btn pink-btn-main" onClick={downloadImage}>Save Card</button>
+</div>
 
         <div className="footer">
           <p className="date-text">{new Date().toDateString()}</p>
