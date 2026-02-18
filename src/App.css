@@ -1,14 +1,103 @@
-.slider-container {
-  margin: 10px 0 20px 0;
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Quicksand:wght@300;500;700&display=swap');
+
+body {
+  margin: 0;
+  transition: background-color 0.5s ease;
+}
+
+.container {
+  background-color: #fff5f8;
+  min-height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 5px;
+  transition: background-color 0.5s ease;
+}
+
+.container.dark-theme {
+  background-color: #121212;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: white;
+  border: 2px solid #f8bbd0;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  color: #ad1457;
+  z-index: 10;
+}
+
+.card.aesthetic {
+  background: #ffffff;
+  background-image: url('https://www.transparenttextures.com/patterns/white-diamond.png');
+  padding: 40px;
+  border-radius: 50px;
+  box-shadow: 0 25px 50px rgba(255, 182, 193, 0.2);
+  text-align: center;
+  max-width: 480px;
+  border: 4px solid #ffebee;
+}
+
+.dark-theme .card.aesthetic {
+  background: #1e1e1e;
+  border-color: #ad1457;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.title.pink {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.8rem;
+  color: #ad1457;
+  margin: 0 0 10px 0;
+}
+
+.dark-theme .title.pink { color: #ff80ab; }
+
+.love-note.pink {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.6rem;
+  color: #d81b60;
+  margin: 20px 0;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark-theme .love-note.pink { color: #f06292; }
+
+.btn.pink-btn {
+  background: white;
+  color: #f06292;
+  border: 2px solid #f8bbd0;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn.pink-btn-main {
+  background: #fce4ec !important;
+  color: #880e4f !important;
+  border: 2px solid #f8bbd0 !important;
+}
+
+.dark-theme .btn.pink-btn {
+  background: #2d2d2d;
+  color: #ff80ab;
 }
 
 .slider-container label {
   font-family: 'Quicksand';
-  font-size: 0.8rem;
   color: #f06292;
   font-weight: 700;
 }
@@ -19,23 +108,4 @@
   height: 6px;
   background: #f8bbd0;
   border-radius: 5px;
-  outline: none;
-}
-
-.pink-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 18px;
-  height: 18px;
-  background: #ad1457;
-  border-radius: 50%;
-  cursor: pointer;
-  border: 2px solid white;
-}
-
-.dark-theme .pink-slider {
-  background: #4a143c;
-}
-
-.dark-theme .pink-slider::-webkit-slider-thumb {
-  background: #ff80ab;
 }
