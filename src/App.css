@@ -109,3 +109,65 @@ body {
   background: #f8bbd0;
   border-radius: 5px;
 }
+.actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* This forces BOTH buttons to be beautiful pill shapes */
+.btn {
+  font-family: 'Quicksand', sans-serif !important;
+  font-weight: 700 !important;
+  padding: 10px 22px !important;
+  border-radius: 50px !important; /* Forces the pill shape */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid #f8bbd0 !important;
+  font-size: 0.85rem !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+/* Replay Button Style */
+.pink-btn {
+  background: white !important;
+  color: #f06292 !important;
+}
+
+/* Save Card Button Style */
+.pink-btn-main {
+  background: #fce4ec !important;
+  color: #ad1457 !important;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(240, 98, 146, 0.2);
+}
+
+/* Fixing the Date and Countdown at the bottom */
+.footer {
+  margin-top: 25px;
+  border-top: 1px solid rgba(248, 187, 208, 0.3);
+  padding-top: 15px;
+}
+
+.date-text {
+  font-family: 'Quicksand', sans-serif !important;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #ad1457;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.countdown.pink {
+  font-family: 'Quicksand', sans-serif !important;
+  font-size: 0.8rem;
+  color: #f48fb1;
+  margin-top: 5px;
+}
