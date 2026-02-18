@@ -42,6 +42,7 @@ const App = () => {
     const ctx = canvas.getContext('2d');
     
     const today = new Date();
+    // Anniversary logic for May 24th
     const isAnniversary = today.getMonth() === 4 && today.getDate() === 24;
     const daySeed = today.getFullYear() * 1000 + today.getMonth() * 100 + today.getDate();
 
@@ -93,6 +94,7 @@ const App = () => {
         const p = Math.max(0, Math.min((frame - f.delay) / 80, 1));
         if (p <= 0) return;
 
+        // Interaction physics
         const dx = mouseRef.current.x - f.x;
         const dy = mouseRef.current.y - f.y;
         const dist = Math.sqrt(dx*dx + dy*dy);
@@ -167,16 +169,22 @@ const App = () => {
     fCtx.fillStyle = isDark ? "#1a1a1a" : "#fffcfd"; 
     fCtx.fillRect(0, 0, finalCanvas.width, finalCanvas.height);
     fCtx.textAlign = "center";
+    
+    // Aesthetic font for the download
     fCtx.fillStyle = isDark ? "#ff80ab" : "#ad1457"; 
     fCtx.font = "italic 36px 'Dancing Script', cursive";
     fCtx.fillText("Todays flowers for Sara", 250, 80);
+    
     fCtx.drawImage(bouquetCanvas, 50, 130);
+    
     fCtx.fillStyle = isDark ? "#f48fb1" : "#d81b60"; 
     fCtx.font = "italic 24px 'Dancing Script', cursive"; 
     fCtx.fillText(`"${note}"`, 250, 700);
+    
     fCtx.fillStyle = isDark ? "#ad1457" : "#d81b60"; 
     fCtx.font = "italic 18px 'Dancing Script', cursive";
     fCtx.fillText("Made with love by Coco", 250, 805);
+    
     const link = document.createElement('a'); 
     link.download = `sara-bouquet.png`; 
     link.href = finalCanvas.toDataURL(); link.click();
@@ -217,7 +225,7 @@ const App = () => {
 
         <div className="actions">
           <button className="btn pink-btn" onClick={() => window.location.reload()}>Replay</button>
-          <button className="btn primary pink-btn-main" onClick={downloadImage}>Save Card</button>
+          <button className="btn pink-btn pink-btn-main" onClick={downloadImage}>Save Card</button>
         </div>
 
         <div className="footer">
